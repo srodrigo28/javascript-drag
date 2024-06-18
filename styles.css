@@ -1,0 +1,54 @@
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    color: white;
+    background-color: #130f0d;
+}
+
+.boards{
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.board{
+    background-color: #141316;
+    border: 1px solid #fd951f11;
+    border-radius: 4px;
+    margin: 0 16px;
+}
+
+.board h3{
+    padding: 16px;
+    margin: 0;
+    color: #FD951FCC;
+}
+
+.dropzone{
+    padding: 16px;
+    min-width: 282px;
+    min-height: 200px;
+}
+
+.card{
+    padding: 16px;
+    box-shadow: 0 2px 2px -1px #FD951Fcc;
+    width: 250px;
+    margin: 2px 0;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+}
+.status{
+    width: 50px;
+    height: 12px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+.status.red{ background-color: red; }
+.status.blue{ background-color: blue; }
+.status.green{ background-color: green; }

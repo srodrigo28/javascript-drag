@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Drag&Drop</title>
+</head>
+<body>
+    <div class="boards">
+
+        <div class="board">
+            <h3>Todo</h3>
+            <div class="dropzone">
+                <div class="card" draggable="true">
+                    <div class="status blue"></div>
+                    <div class="content"> Energia </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="board">
+            <h3>In progress</h3>
+            <div class="dropzone" draggable="true">
+                <div class="card">
+                    <div class="status red"></div>
+                    <div class="content"> Internet </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="board">
+            <h3>Done!</h3>
+            <div class="dropzone" draggable="true">
+                <div class="card">
+                    <div class="status green"></div>
+                    <div class="content"> Do Videos! </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
