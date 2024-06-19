@@ -1,11 +1,11 @@
 // alert('carregou')
 
-function log1(message){
+function log(message){
     console.log('> ' + message)
 }
 
 const cards = document.querySelectorAll('.card')
-const dropzone = document.querySelectorAll('.dropzone')
+const dropzones = document.querySelectorAll('.dropzone')
 
 // console.log(cards)
 
@@ -17,20 +17,26 @@ cards.forEach(card => {
 })
 
 function dragstart(){
-    log1('CARD: Start dragging')
+    // log('CARD: Start dragging')
+    dropzones.forEach( dropzone => dropzone.classList.add('highlight'))
+
+    this.classList.add('is-dragging')
 }
 
 function drag(){
-    log1('CARD: Is Dragging')
+    log('CARD: Is Dragging')
 }
 
 function dragend(){
-    log1('CARD: Stop drag!')
+    // log1('CARD: Stop drag!')
+    dropzones.forEach( dropzone => dropzone.classList.remove('highlight'))
+
+    this.classList.remove('is-dragging')
 }
 
 // laço de iteração  local onde vou soltar os cartões
 // place where we will drop cards zone
-dropzone.forEach( dropzone => {
+dropzones.forEach( dropzone => {
     dropzone.addEventListener('dragenter', dragenter)
     dropzone.addEventListener('dragover', dragover)
     dropzone.addEventListener('dragleave', dragleave)
@@ -38,17 +44,26 @@ dropzone.forEach( dropzone => {
 })
 
 function dragenter(){
-    log1('DROPZONE: Enter in zone')
+    log('DROPZONE: Enter in zone')
 }
 
 function dragover(){
-    log1('DROPZONE: Over in zone')
+    // log('DROPZONE: Over in zone')
+    this.classList.add('over')
+
+    // get dragging card pegar o cartão
+    const cardBeingDragged = document.querySelector('.is-dragging')
+
+    // this = dropzone
+    this.appendChild(cardBeingDragged)
 }
 
 function dragleave(){
-    log1('DROPZONE: Leave in zone')
+    // log('DROPZONE: Leave in zone')
+    this.classList.remove('over')
 }
 
 function drop(){
-    log1('DROPZONE: Drop in zone')
+    log('DROPZONE: Drop in zone')
+    this.classList.remove('over')
 }
